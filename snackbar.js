@@ -1,10 +1,8 @@
 /*
 *import jquery 2+
-*inport font awesome CDN using:
-*<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 */
 
-var snackBar = function(texto, nivel){
+var snackBar = function(texto, nivel, reload_time){
 	var bg_nivel;
 	switch(nivel){
 		case "ERROR":
@@ -48,9 +46,22 @@ var snackBar = function(texto, nivel){
 		},1000);
 		
 	},3000);
-	
+	if(reload_time != undefined){
+		if(reload_time > 3000){
+			setTimeout(location.reload.bind(location), reload_time);
+		}else{
+			setTimeout(location.reload.bind(location), 3000);
+		}
+		
+	}
 };
 window.onload = function(){
+	var stylesheet = $("<link>", {
+	    rel: "stylesheet",
+	    type: "text/css",
+	    href: "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+	});
+	stylesheet.appendTo("head");
 	var wrapper = $("<div/>",{
 	    "class" : "snack-wrapper",
 	    "css" : {
@@ -64,3 +75,4 @@ window.onload = function(){
 	$("body").append(wrapper);
 }
 window.snackBar = snackBar;
+console.log("snackbar instalado com sucesso!");

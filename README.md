@@ -1,6 +1,6 @@
 <h2>USING</h2>
-import in order, the jQuery 2+ and the font awesome icon library.
-To create the snackbar, call snackBar("message", "INFO-LEVEL")
+import the jQuery 2+ before the script.
+To create the snackbar, call snackBar("message", "INFO-LEVEL", time_to_refresh_page)
 
 the info levels are:
 "INFO" for information dialogs (blue snack)
@@ -8,3 +8,5 @@ the info levels are:
 "ERROR" for error dialogs (red snack)
 "SUCCESS" for success dialogs (green snack)
 (not set) for normal dialogs (grey snack)
+
+the time to reload page is optional and have to be 3000 (3s) or more:
