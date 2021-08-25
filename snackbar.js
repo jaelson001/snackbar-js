@@ -52,7 +52,6 @@ var snackBar = function(texto, nivel, reload_time){
 		}else{
 			setTimeout(location.reload.bind(location), 3000);
 		}
-		
 	}
 };
 window.onload = function(){
