@@ -2,7 +2,7 @@
 *import jquery 2+
 */
 
-var snackBar = function(texto, nivel, reload_time){
+    var snackBar = function(texto, nivel, reload_time){
 	var bg_nivel;
 	switch(nivel){
 		case "ERROR":
@@ -32,7 +32,7 @@ var snackBar = function(texto, nivel, reload_time){
 		    'border-radius': '5px', 'box-shadow': '0px 2px 30px -7px #3337',
 		    'font-family': "Arial, sans-serif", 'font-size': '0.8rem',
 		    'font-weight': 'bold', position: 'relative',height: "auto",
-		    "margin": "5px"
+		    "margin": "5px", 'overflow': 'hidden', 'text-overflow': 'ellipsis'
 		}
 	});
 	var wrapper = $(".snack-wrapper");
@@ -65,10 +65,10 @@ window.onload = function(){
 	    "class" : "snack-wrapper",
 	    "css" : {
 	    	display:"flex", transition: 'all 0.3s', background: "transparent",
-		    padding: '5px', width: '30%', color: '#eee',
+		    padding: '5px', width: '33.3333%', color: '#eee',
 		    'border-radius': '5px', position: 'fixed',
-		    bottom: '10px', right: '5%', height: "fit-content",
-		    "flex-flow": "column-reverse wrap"
+		    bottom: '10px', right: '50%','z-index':9999, height: "fit-content",
+		    "flex-flow": "column-reverse wrap", transform:"translateX(50%)"
 		}
 	});
 	$("body").append(wrapper);
